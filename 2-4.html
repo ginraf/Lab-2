@@ -1,0 +1,34 @@
+﻿<HTML>
+  <head>
+    <script>
+      function f(s){
+        tbl.innerHTML="";
+        var c=s.form.c.value;
+        var r=s.form.r.value;
+        var s,i,j,num;
+        var mas=["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+        for(i=0;i<r;i++){
+          tbl.insertRow();
+          for(j=0; j<c; j++) {
+            tbl.rows[i].insertCell();  
+	    num=Math.floor(Math.random()*(10-1+1))+0;
+            tbl.rows[i].cells[j].innerHTML=mas[num];
+          }
+        }     
+      }
+    </SCRIPT>
+  </HEAD>
+  <BODY>
+    <FORM>
+      <INPUT SIZE=2 ID=r> строк
+      <br>
+      <br>
+      <INPUT SIZE=2 ID=c> столбцов
+      <br>
+      <br>
+      <INPUT TYPE=BUTTON ONCLICK='f(this)' VALUE='to create'>
+    </FORM>
+    <TABLE ID=tbl BORDER=1>
+    </TABLE>
+  </BODY>
+</HTML>

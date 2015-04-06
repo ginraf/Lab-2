@@ -1,0 +1,44 @@
+﻿<HTML>
+  <head>
+    <script>
+      function f(s){
+        tbl.innerHTML="";
+        var c=s.form.c.value;
+        var r=s.form.r.value;
+        var h=s.form.h.value;
+        var w=s.form.w.value;
+        var s,i,j,num;
+        var mas=["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+        for(i=0;i<r;i++){
+          tbl.insertRow();
+          for(j=0; j<c; j++) {
+            tbl.rows[i].insertCell();
+            tbl.rows[i].cells[j].width=w;
+            tbl.rows[i].cells[j].height=h; 
+	    num=Math.floor(Math.random()*(10-1+1))+0;
+            tbl.rows[i].cells[j].innerHTML=mas[num];
+          }
+        }     
+      }
+    </SCRIPT>
+  </HEAD>
+  <BODY>
+    <FORM>
+      Строк - <INPUT SIZE=2 ID=r>
+      <br>
+      <br>
+      Столбцов - <INPUT SIZE=2 ID=c>
+      <br>
+      <br>
+      Высота ячеек - <INPUT SIZE=2 ID=h>
+      <br>
+      <br>
+      Ширина ячеек - <INPUT SIZE=2 ID=w>
+      <br>
+      <br>
+      <INPUT TYPE=BUTTON ONCLICK='f(this)' VALUE='to create'>
+    </FORM>
+    <TABLE ID=tbl BORDER=1>
+    </TABLE>
+  </BODY>
+</HTML>
